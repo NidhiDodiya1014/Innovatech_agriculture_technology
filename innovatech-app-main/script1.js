@@ -1,115 +1,744 @@
+//script1.js
 // document.addEventListener("DOMContentLoaded", function() {
-let flag = false;
-document.querySelector(".buttonSubmit").addEventListener("click",(event)=>{
-  event.preventDefault();
-  let crop = "rice";
-  if (!flag) {
-    document.querySelector(".sugC").textContent += " " + crop;
-    flag = true;
-  }
-})
-document.querySelector(".yes").addEventListener("click", (event) => {
-  event.preventDefault();
-  setTimeout(() => {
-    let nitrogen_data = document.querySelector(".nitrogen").value;
-    let phosphorus_data = document.querySelector(".phosphorus").value;
-    let potassium_data = document.querySelector(".potassium").value;
-    let humidity_data = document.querySelector(".humidity").value;
-    let temperature_data = document.querySelector(".temperature").value;
-    let rainfall_data = document.querySelector(".rainfall").value;
-    localStorage.setItem("nitrogen_data", nitrogen_data);
-    localStorage.setItem("phosphorus_data", phosphorus_data);
-    localStorage.setItem("potassium_data", potassium_data);
-    localStorage.setItem("humidity_data", humidity_data);
-    localStorage.setItem("temperature_data", temperature_data);
-    localStorage.setItem("rainfall_data", rainfall_data);
-    document.querySelector(".soil_data").style.display = "block";
-    document.querySelector(".page2").style.display = "block";
-    document.querySelector(".page1_form").style.display = "none";
-    document.body.style.backgroundColor="rgb(253 224 71)";
- 
-  
-
-
-    console.log(
-      nitrogen_data,
-      phosphorus_data,
-      potassium_data,
-      humidity_data,
-      temperature_data,
-      rainfall_data
-    );
-    // Retrieve stored values from localStorage
-
-    // Update corresponding span elements with retrieved values
-    document.querySelector("span#nitrogen-value").textContent = nitrogen_data;
-    document.querySelector("span#phosphorus-value").textContent =
-      phosphorus_data;
-    document.querySelector("span#potassium-value").textContent = potassium_data;
-    document.querySelector("span#humidity-value").textContent = humidity_data;
-    document.querySelector("span#temperature-value").textContent =
-      temperature_data;
-    document.querySelector("span#rainfall-value").textContent = rainfall_data;
-
-    document.getElementById("Nitrogen").value = nitrogen_data;
-    document.getElementById("Phosphorus").value = phosphorus_data;
-    document.getElementById("Potassium").value = potassium_data;
-    document.getElementById("Humidity").value = humidity_data;
-    document.getElementById("Temperature").value = temperature_data;
-    document.getElementById("Rainfall").value = rainfall_data;
-  }, 500);
-});
-// });
-
-document.getElementById("crop-yield-link").addEventListener("click", function() {
-  document.querySelector(".page2").style.display = "block";
-  document.querySelector(".page1_form").style.display = "none";
-  document.querySelector(".r1").style.display = "none";
-  
-});
-
-document.getElementById("first_page").addEventListener("click", function() {
-  document.querySelector(".page1_form").style.display = "block";
-  document.querySelector(".page2").style.display = "none"; 
-  document.querySelector(".r1").style.display = "none";
-});
-
-
-  
- // If a person selects a state, the districts should change accordingly
- const state = document.getElementById('state');
- const district = document.getElementById('district');
-
- state.addEventListener('change', () => {
-     // Clear the districts
-     district.innerHTML = '';
-
-     // Add the districts based on the state
-     if (state.value === 'Andhra Pradesh') {
-         const districts = ['Anantapur', 'Chittoor', 'East Godavari', 'Guntur', 'Krishna', 'Kurnool', 'Nellore', 'Prakasam', 'Srikakulam', 'Visakhapatnam', 'Vizianagaram', 'West Godavari', 'YSR Kadapa'];
-         districts.forEach(districtName => {
-             const option = document.createElement('option');
-             option.value = districtName;
-             option.textContent = districtName;
-             district.appendChild(option);
-         });
-     } else if (state.value === 'Arunachal Pradesh') {
-         const districts = ['Anjaw', 'Changlang', 'Dibang Valley', 'East Kameng', 'East Siang', 'Kamle', 'Kra Daadi', 'Kurung Kumey', 'Lepa Rada', 'Lohit', 'Longding', 'Lower Dibang Valley', 'Lower Siang', 'Lower Subansiri', 'Namsai', 'Pakke Kessang', 'Papum Pare', 'Shi Yomi', 'Siang', 'Tawang', 'Tirap', 'Upper Siang', 'Upper Subansiri', 'West Kameng', 'West Siang'];
-         districts.forEach(districtName => {
-             const option = document.createElement('option');
-             option.value = districtName;
-             option.textContent = districtName;
-             district.appendChild(option);
-         });
-     } else if (state.value === 'Assam') {
-         const districts = ['Baksa', 'Barpeta', 'Biswanath', 'Bongaigaon', 'Cachar', 'Charaideo', 'Chirang', 'Darrang', 'Dhemaji', 'Dhubri', 'Dibrugarh', 'Dima Hasao', 'Goalpara', 'Golaghat', 'Hailakandi', 'Hojai', 'Jorhat', 'Kamrup', 'Kamrup Metropolitan', 'Karbi Anglong', 'Karimganj', 'Kokrajhar', 'Lakhimpur', 'Majuli', 'Morigaon', 'Nagaon', 'Nalbari', 'Sivasagar', 'Sonitpur', 'South Salmara-Mankachar', 'Tinsukia', 'Udalguri', 'West Karbi Anglong'];
-         districts.forEach(districtName => {
-             const option = document.createElement('option');
-             option.value = districtName;
-             option.textContent = districtName;
-             district.appendChild(option);
-         });
-     }
- });
-
- 
+    let flag = false;
+    document.querySelector(".buttonSubmit").addEventListener("click", (event) => {
+      setTimeout(() => {
+        document.querySelector(".ask").style.display = "block";
+      }, 1000);
+      document.querySelector(".green_box").style.display = "flex";
+      document.querySelector(".green_box").style.justifyContent = "space-around";
+      event.preventDefault();
+      let crop = "rice";
+      if (!flag) {
+        document.querySelector(".sugC").textContent += " " + crop;
+        flag = true;
+      }
+    });
+    // document.querySelector(".started_get").addEventListener("click",(event)=>{
+    //   document.querySelector('.homepage1').style.display = "none";
+    //   document.querySelector('.page1_form').style.display = "block";
+    //   document.querySelector('.menu').style.display = "block";
+    //   document.querySelector('.side').style.display = "block";
+    // })
+    document.querySelector(".yes").addEventListener("click", (event) => {
+      event.preventDefault();
+      let nitrogen_data = document.querySelector(".nitrogen").value;
+      let phosphorus_data = document.querySelector(".phosphorus").value;
+      let potassium_data = document.querySelector(".potassium").value;
+      let humidity_data = document.querySelector(".humidity").value;
+      let temperature_data = document.querySelector(".temperature").value;
+      let rainfall_data = document.querySelector(".rainfall").value;
+      localStorage.setItem("nitrogen_data", nitrogen_data);
+      localStorage.setItem("phosphorus_data", phosphorus_data);
+      localStorage.setItem("potassium_data", potassium_data);
+      localStorage.setItem("humidity_data", humidity_data);
+      localStorage.setItem("temperature_data", temperature_data);
+      localStorage.setItem("rainfall_data", rainfall_data);
+      document.querySelector(".soil_data").style.display = "block";
+      document.querySelector(".page2").style.display = "block";
+      document.querySelector(".page1_form").style.display = "none";
+    
+      // Update corresponding span elements with retrieved values
+      document.querySelector("span#nitrogen-value").textContent = nitrogen_data;
+      document.querySelector("span#phosphorus-value").textContent = phosphorus_data;
+      document.querySelector("span#potassium-value").textContent = potassium_data;
+      document.querySelector("span#humidity-value").textContent = humidity_data;
+      document.querySelector("span#temperature-value").textContent =
+        temperature_data;
+      document.querySelector("span#rainfall-value").textContent = rainfall_data;
+    
+      document.getElementById("Nitrogen").value = nitrogen_data;
+      document.getElementById("Phosphorus").value = phosphorus_data;
+      document.getElementById("Potassium").value = potassium_data;
+      document.getElementById("Humidity").value = humidity_data;
+      document.getElementById("Temperature").value = temperature_data;
+      document.getElementById("Rainfall").value = rainfall_data;
+    });
+    // });
+    
+    document
+      .getElementById("crop-yield-link")
+      .addEventListener("click", function () {
+        document.querySelector(".page2").style.display = "block";
+        document.querySelector(".page1_form").style.display = "none";
+        document.querySelector(".r1").style.display = "none";
+      });
+    
+    document.getElementById("first_page").addEventListener("click", function () {
+      document.querySelector(".page1_form").style.display = "block";
+      document.querySelector(".page2").style.display = "none";
+      document.querySelector(".r1").style.display = "none";
+    });
+    document.getElementById("rainfall_link").addEventListener("click", function () {
+      document.querySelector(".page2").style.display = "none";
+      document.querySelector(".page1_form").style.display = "none";
+      document.querySelector(".r1").style.display = "block";
+    });
+    //  --------------------------------page2_js-------------------------------------------
+    document.querySelector(".submit").addEventListener("click", () => {
+      document.querySelector(".page1_form").style.display = "none";
+      document.querySelector(".page2").style.display = "none";
+      document.querySelector(".r1").style.display = "block";
+    });
+    
+    const crops = [
+      "apple",
+      "banana",
+      "blackgram",
+      "chickpea",
+      "coconut",
+      "coffee",
+      "cotton",
+      "grapes",
+      "jute",
+      "kidney_beans",
+      "lentil",
+      "maize",
+      "mango",
+      "moth_beans",
+      "mung_bean",
+      "muskmelon",
+      "orange",
+      "papaya",
+      "pigeon_peas",
+      "pomegranate",
+      "rice",
+      "watermelon",
+    ];
+    
+    const cropSelect = document.getElementById("crop");
+    
+    crops.forEach((crop) => {
+      const option = document.createElement("option");
+      option.value = crop.toUpperCase();
+      option.textContent = crop;
+      cropSelect.appendChild(option);
+    });
+    
+    //  --------------------------------rainfall_js-------------------------------------------
+    
+    const districts = [
+      "NICOBAR",
+      "SOUTH ANDAMAN",
+      "N & M ANDAMAN",
+      "LOHIT",
+      "EAST SIANG",
+      "SUBANSIRI F.D",
+      "TIRAP",
+      "ANJAW (LOHIT)",
+      "LOWER DIBANG",
+      "CHANGLANG",
+      "PAPUM PARE",
+      "LOW SUBANSIRI",
+      "UPPER SIANG",
+      "WEST SIANG",
+      "DIBANG VALLEY",
+      "WEST KAMENG",
+      "EAST KAMENG",
+      "TAWANG(W KAME",
+      "KURUNG KUMEY",
+      "CACHAR",
+      "DARRANG",
+      "GOALPARA",
+      "KAMRUP",
+      "LAKHIMPUR",
+      "NORTH CACHAR",
+      "NAGAON",
+      "SIVASAGAR",
+      "BARPETA",
+      "DHUBRI",
+      "DIBRUGARH",
+      "JORHAT",
+      "KARIMGANJ",
+      "KOKRAJHAR",
+      "SHONITPUR",
+      "GOLAGHAT",
+      "TINSUKIA",
+      "HAILAKANDI",
+      "DHEMAJI(LAKHI",
+      "KARBI ANGLONG",
+      "UDALGURI(DARA",
+      "KAMRUP METROP",
+      "CHIRANG(BONGAI",
+      "BAKSA BARPETA",
+      "BONGAIGAON",
+      "MORIGAON",
+      "NALBARI",
+      "EAST KHASI HI",
+      "JAINTIA HILLS",
+      "EAST GARO HIL",
+      "RI-BHOI",
+      "SOUTH GARO HI",
+      "W KHASI HILL",
+      "WEST GARO HIL",
+      "IMPHAL EAST",
+      "SENAPATI",
+      "TAMENGLONG",
+      "CHANDEL",
+      "UKHRUL",
+      "THOUBAL",
+      "BISHNUPUR",
+      "IMPHAL WEST",
+      "CHURACHANDPUR",
+      "AIZAWL",
+      "CHAMPHAI",
+      "KOLASIB",
+      "LUNGLEI",
+      "CHHIMTUIPUI",
+      "LAWNGTLAI",
+      "MAMIT",
+      "SAIHA",
+      "SERCHHIP",
+      "KOHIMA",
+      "TUENSANG",
+      "MOKOKCHUNG",
+      "DIMAPUR",
+      "WOKHA",
+      "MON",
+      "ZUNHEBOTO",
+      "PHEK",
+      "KEPHRIE",
+      "LONGLENG",
+      "PEREN",
+      "NORTH TRIPURA",
+      "SOUTH TRIPURA",
+      "WEST TRIPURA",
+      "DHALAI",
+      "COOCH BEHAR",
+      "DARJEELING",
+      "JALPAIGURI",
+      "MALDA",
+      "SOUTH DINAJPUR",
+      "NORTH DINAJPUR",
+      "NORTH SIKKIM",
+      "EAST SIKKIM",
+      "WEST SIKKIM",
+      "SOUTH SIKKIM",
+      "BANKURA",
+      "BIRBHUM",
+      "BURDWAN",
+      "HOOGHLY",
+      "HOWRAH",
+      "PURULIA",
+      "MURSHIDABAD",
+      "NADIA",
+      "NORTH 24 PARG",
+      "SOUTH 24 PARG",
+      "EAST MIDNAPOR",
+      "WEST MIDNAPOR",
+      "KOLKATA",
+      "BALASORE",
+      "BOLANGIR",
+      "KANDHAMAL/PHU",
+      "CUTTACK",
+      "DHENKANAL",
+      "GANJAM",
+      "KALAHANDI",
+      "KEONDJHARGARH",
+      "KORAPUT",
+      "MAYURBHANJ",
+      "PURI",
+      "SAMBALPUR",
+      "SUNDARGARH",
+      "BHADRAK",
+      "JAJPUR",
+      "KENDRAPARA",
+      "ANGUL",
+      "NAWAPARA",
+      "MALKANGIRI",
+      "NAWARANGPUR",
+      "NAYAGARH",
+      "KHURDA",
+      "BARGARH",
+      "JHARSUGUDA",
+      "DEOGARH",
+      "RAYAGADA",
+      "GAJAPATI",
+      "JAGATSINGHAPU",
+      "BOUDHGARH",
+      "SONEPUR",
+      "BOKARO",
+      "DHANBAD",
+      "DUMKA",
+      "HAZARIBAG",
+      "PALAMU",
+      "RANCHI",
+      "SAHIBGANJ",
+      "WEST SINGHBHUM",
+      "DEOGHAR",
+      "GIRIDIH",
+      "GODDA",
+      "GUMLA",
+      "LOHARDAGA",
+      "CHATRA",
+      "KODERMA",
+      "PAKUR",
+      "EAST SINGHBHU",
+      "GARHWA",
+      "SERAIKELA-KHA",
+      "JAMTARA",
+      "LATEHAR",
+      "SIMDEGA",
+      "KHUNTI(RANCHI",
+      "RAMGARH",
+      "BHAGALPUR",
+      "EAST CHAMPARAN",
+      "DARBHANGA",
+      "GAYA",
+      "MUNGER",
+      "MUZAFFARPUR",
+      "WEST CHAMPARAN",
+      "PURNEA",
+      "GOPALGANJ",
+      "MADHUBANI",
+      "AURANGABAD",
+      "BEGUSARAI",
+      "BHOJPUR",
+      "NALANDA",
+      "PATNA",
+      "KATIHAR",
+      "KHAGARIA",
+      "SARAN",
+      "MADHEPURA",
+      "NAWADA",
+      "ROHTAS",
+      "SAMASTIPUR",
+      "SITAMARHI",
+      "SIWAN",
+      "VAISHALI",
+      "JAHANABAD",
+      "BUXAR",
+      "ARARIA",
+      "BANKA",
+      "BHABUA",
+      "JAMUI",
+      "KISHANGANJ",
+      "SHEIKHPURA",
+      "SUPAUL",
+      "LAKHISARAI",
+      "SHEOHAR",
+      "ARWAL",
+      "SAHARSA",
+      "ALLAHABAD",
+      "AZAMGARH",
+      "BAHRAICH",
+      "BALLIA",
+      "BANDA",
+      "BARABANKI",
+      "BASTI",
+      "DEORIA",
+      "FAIZABAD",
+      "FARRUKHABAD",
+      "FATEHPUR",
+      "GHAZIPUR",
+      "GONDA",
+      "GORAKHPUR",
+      "HARDOI",
+      "JAUNPUR",
+      "KANPUR NAGAR",
+      "KHERI LAKHIMP",
+      "LUCKNOW",
+      "MIRZAPUR",
+      "PRATAPGARH",
+      "RAE BARELI",
+      "SITAPUR",
+      "SULTANPUR",
+      "UNNAO",
+      "VARANASI",
+      "SONBHADRA",
+      "MAHARAJGANJ",
+      "MAU",
+      "SIDDHARTH NGR",
+      "KUSHINAGAR",
+      "AMBEDKAR NAGAR",
+      "KANNAUJ",
+      "BALRAMPUR",
+      "KAUSHAMBI",
+      "SAHUJI MAHARA",
+      "KANPUR DEHAT",
+      "CHANDAULI",
+      "SANT KABIR NGR",
+      "SANT RAVIDAS",
+      "SHRAVASTI NGR",
+      "AGRA",
+      "ALIGARH",
+      "BAREILLY",
+      "BIJNOR",
+      "BADAUN",
+      "BULANDSHAHAR",
+      "ETAH",
+      "ETAWAH",
+      "HAMIRPUR",
+      "JALAUN",
+      "JHANSI",
+      "LALITPUR",
+      "MAINPURI",
+      "MATHURA",
+      "MEERUT",
+      "MORADABAD",
+      "MUZAFFARNAGAR",
+      "PILIBHIT",
+      "RAMPUR",
+      "SAHARANPUR",
+      "SHAHJAHANPUR",
+      "GHAZIABAD",
+      "FIROZABAD",
+      "MAHOBA",
+      "MAHAMAYA NAGA",
+      "AURAIYA",
+      "BAGPAT",
+      "JYOTIBA PHULE",
+      "GAUTAM BUDDHA",
+      "KANSHIRAM NAG",
+      "ALMORA",
+      "CHAMOLI",
+      "DEHRADUN",
+      "GARHWAL PAURI",
+      "NAINITAL",
+      "PITHORAGARH",
+      "GARHWAL TEHRI",
+      "UTTARKASHI",
+      "HARIDWAR",
+      "CHAMPAWAT",
+      "RUDRAPRAYAG",
+      "UDHAM SINGH N",
+      "BAGESHWAR",
+      "AMBALA",
+      "GURGAON",
+      "HISAR",
+      "JIND",
+      "KARNAL",
+      "MAHENDRAGARH",
+      "ROHTAK",
+      "BHIWANI",
+      "FARIDABAD",
+      "KURUKSHETRA",
+      "SIRSA",
+      "SONEPAT(RTK)",
+      "YAMUNANAGAR",
+      "KAITHAL",
+      "PANIPAT",
+      "REWARI",
+      "FATEHABAD",
+      "JHAJJAR",
+      "PANCHKULA",
+      "MEWAT",
+      "PALWAL(FRD)",
+      "CHANDIGARH",
+      "NORTH DELHI",
+      "NE DELHI",
+      "SW DELHI",
+      "NW DELHI",
+      "SOUTH DELHI",
+      "WEST DELHI",
+      "AMRITSAR",
+      "BATHINDA",
+      "FEROZEPUR",
+      "GURDASPUR",
+      "HOSHIARPUR",
+      "JALANDHAR",
+      "KAPURTHALA",
+      "LUDHIANA",
+      "PATIALA",
+      "RUPNAGAR",
+      "SANGRUR",
+      "FARIDKOT",
+      "MOGA",
+      "NAWANSHAHR",
+      "FATEHGARH SAH",
+      "MUKTSAR",
+      "MANSA",
+      "BARNALA",
+      "SAS NAGAR(MGA)",
+      "TARN TARAN",
+      "BILASPUR",
+      "CHAMBA",
+      "KANGRA",
+      "KINNAUR",
+      "KULLU",
+      "LAHUL & SPITI",
+      "MANDI",
+      "SHIMLA",
+      "SIRMAUR",
+      "SOLAN",
+      "UNA",
+      "ANANTNAG",
+      "BARAMULLA",
+      "DODA",
+      "JAMMU",
+      "KATHUA",
+      "LADAKH (LEH)",
+      "UDHAMPUR",
+      "BADGAM",
+      "KUPWARA",
+      "PULWAMA",
+      "SRINAGAR",
+      "KARGIL",
+      "POONCH",
+      "RAJOURI",
+      "BANDIPORE",
+      "GANDERWAL",
+      "KULGAM/(ANT)",
+      "SHOPAN",
+      "SAMBA",
+      "KISTWAR",
+      "REASI",
+      "RAMBAN(DDA)",
+      "BARMER",
+      "BIKANER",
+      "CHURU",
+      "SRI GANGANAGA",
+      "JAISALMER",
+      "JALORE",
+      "JODHPUR",
+      "NAGAUR",
+      "PALI",
+      "HANUMANGARH",
+      "AJMER",
+      "ALWAR",
+      "BANSWARA",
+      "BHARATPUR",
+      "BHILWARA",
+      "BUNDI",
+      "CHITTORGARH",
+      "DUNGARPUR",
+      "JAIPUR",
+      "JHALAWAR",
+      "JHUNJHUNU",
+      "KOTA",
+      "SAWAI MADHOPUR",
+      "SIKAR",
+      "SIROHI",
+      "TONK",
+      "UDAIPUR",
+      "DHOLPUR",
+      "BARAN",
+      "DAUSA",
+      "RAJSAMAND",
+      "KARAULI",
+      "PRATAPGARH(CHT",
+      "BETUL",
+      "VIDISHA",
+      "BHIND",
+      "DATIA",
+      "DEWAS",
+      "DHAR",
+      "GUNA",
+      "GWALIOR",
+      "HOSHANGABAD",
+      "INDORE",
+      "JHABUA",
+      "MANDSAUR",
+      "MORENA",
+      "KHANDWA",
+      "KHARGONE",
+      "RAISEN",
+      "RAJGARH",
+      "RATLAM",
+      "SEHORE",
+      "SHAHDOL",
+      "SIDHI",
+      "TIKAMGARH",
+      "KATNI",
+      "DINDORI",
+      "UMARIA",
+      "DAMOH",
+      "ANUPPUR(SHAHD",
+      "SINGRAULI",
+      "AHMEDABAD",
+      "BANASKANTHA",
+      "BARODA",
+      "BHARUCH",
+      "VALSAD",
+      "DANGS",
+      "KHEDA",
+      "MEHSANA",
+      "PANCHMAHALS",
+      "SABARKANTHA",
+      "SURAT",
+      "GANDHINAGAR",
+      "NARMADA(BRC)",
+      "NAVSARI(VSD)",
+      "ANAND(KHR)",
+      "PATAN(MHSN)",
+      "DAHOD(PNML)",
+      "TAPI(SRT)",
+      "AMRELI",
+      "BHAVNAGAR",
+      "JAMNAGAR",
+      "JUNAGADH",
+      "KUTCH",
+      "RAJKOT",
+      "SURENDRANAGAR",
+      "PORBANDAR",
+      "DNH",
+      "DAMAN",
+      "DIU",
+      "MUMBAI CITY",
+      "RAIGAD",
+      "RATNAGIRI",
+      "THANE",
+      "SINDHUDURG",
+      "MUMBAI SUB",
+      "NORTH GOA",
+      "SOUTH GOA",
+      "AHMEDNAGAR",
+      "DHULE",
+      "JALGAON",
+      "KOLHAPUR",
+      "NASHIK",
+      "PUNE",
+      "SANGLI",
+      "SATARA",
+      "SOLAPUR",
+      "NANDURBAR",
+      "BEED",
+      "NANDED",
+      "OSMANABAD",
+      "PARBHANI",
+      "LATUR",
+      "JALNA",
+      "HINGOLI",
+      "AKOLA",
+      "AMRAVATI",
+      "BHANDARA",
+      "BULDHANA",
+      "CHANDRAPUR",
+      "NAGPUR",
+      "YAVATMAL",
+      "WARDHA",
+      "GADCHIROLI",
+      "WASHIM",
+      "GONDIA",
+      "BASTAR",
+      "DURG",
+      "RAIGARH",
+      "RAIPUR",
+      "SURGUJA",
+      "RAJNANDGAON",
+      "DANTEWADA",
+      "KANKER (NORH",
+      "JANJGIR-CHAMP",
+      "KORBA",
+      "JASHPUR",
+      "DHAMTARI",
+      "MAHASAMUND",
+      "KORIYA",
+      "KOWARDHA (KAB",
+      "NARAYANPUR",
+      "BIJAPUR",
+      "EAST GODAVARI",
+      "WEST GODAVARI",
+      "GUNTUR",
+      "KRISHNA",
+      "NELLORE",
+      "PRAKASAM",
+      "SRIKAKULAM",
+      "VISAKHAPATNAM",
+      "VIZIANAGARAM",
+      "ADILABAD",
+      "HYDERABAD",
+      "KARIMNAGAR",
+      "KHAMMAM",
+      "MAHABUBNAGAR",
+      "MEDAK",
+      "NALGONDA",
+      "NIZAMABAD",
+      "WARANGAL",
+      "RANGAREDDY",
+      "ANANTAPUR",
+      "CHITTOOR",
+      "KUDDAPAH",
+      "KURNOOL",
+      "VELLORE",
+      "COIMBATORE",
+      "DHARMAPURI",
+      "KANYAKUMARI",
+      "CHENNAI",
+      "MADURAI",
+      "NILGIRIS",
+      "RAMANATHAPURA",
+      "SALEM",
+      "THANJAVUR",
+      "TIRUCHIRAPPAL",
+      "TIRUNELVELI",
+      "ERODE",
+      "PUDUKKOTTAI",
+      "DINDIGUL",
+      "VIRUDHUNAGAR",
+      "SIVAGANGA",
+      "THOOTHUKUDI",
+      "TIRUVANNAMALA",
+      "NAGAPATTINAM",
+      "VILUPPURAM",
+      "CUDDALORE",
+      "KANCHIPURAM",
+      "TIRUVALLUR",
+      "THENI",
+      "NAMAKKAL",
+      "KARUR",
+      "PERAMBALUR",
+      "TIRUVARUR",
+      "KRISHNAGIRI",
+      "ARIYALUR",
+      "TIRUPUR",
+      "PONDICHERRY",
+      "KARAIKAL",
+      "MAHE",
+      "YANAM",
+      "UTTAR KANNADA",
+      "DAKSHIN KANDA",
+      "UDUPI",
+      "BELGAM",
+      "BIDAR",
+      "DHARWAD",
+      "GULBARGA",
+      "YADGIR",
+      "RAICHUR",
+      "BAGALKOTE",
+      "GADAG",
+      "HAVERI",
+      "KOPPAL",
+      "BANGALORE RUR",
+      "BELLARY",
+      "CHIKMAGALUR",
+      "CHITRADURGA",
+      "KODAGU",
+      "HASSAN",
+      "KOLAR",
+      "MANDYA",
+      "MYSORE",
+      "SHIMOGA",
+      "TUMKUR",
+      "BANGALORE URB",
+      "CHAMARAJANAGA",
+      "DAVANGERE",
+      "RAMNAGAR(BNGR)",
+      "CHICKBALLAPUR",
+      "ALAPPUZHA",
+      "CANNUR",
+      "ERNAKULAM",
+      "KOTTAYAM",
+      "KOZHIKODE",
+      "MALAPPURAM",
+      "PALAKKAD",
+      "KOLLAM",
+      "THRISSUR",
+      "THIRUVANANTHA",
+      "IDUKKI",
+      "KASARGOD",
+      "PATHANAMTHITTA",
+      "WAYANAD",
+      "LAKSHADWEEP",
+    ];
+    
+    districts.sort();
+    
+    const districtSelect = document.getElementById("district");
+    
+    districts.forEach((district) => {
+      const option = document.createElement("option");
+      option.value = district.toUpperCase();
+      option.textContent = district;
+      districtSelect.appendChild(option);
+    });

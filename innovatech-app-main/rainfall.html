@@ -9,29 +9,76 @@
 </head>
 
 <body class="bg-teal-400">
-    <!-- Sidebar -->
-    <div class="fixed inset-y-0 left-0 bg-white w-64 p-6">
-        <div class="mb-8">
-            <img src="farm-technology-logo-design-template-vector-20929631.jpg" alt="Logo" class="w-20">
-        </div>
-        <div class="text-black font-medium text-lg">
-            <ul>
-                <li class="py-2">
-                    <a href="#" class="block p-2 hover:bg-teal-300 rounded">
-                        <span>HP</span>
-                    </a>
-                </li>
-                <li class="py-2">
-                    <a href="#" class="block p-2 hover:bg-teal-300 rounded">
-                        <span>Info.</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <!-- Menu Bar -->
+<div class="fixed top-0 inset-x-0 flex justify-center bg-white py-4 shadow-md z-50">
+    <div class="flex justify-between items-center w-full max-w-5xl px-4">
+      <!-- <h1 class="text-3xl font-extrabold text-gray-800 ">Innovatech</h1> -->
+      <ul class="flex space-x-8">
+        <li>
+          <a href="#" class="text-gray-700 hover:text-blue-600 hover:underline transition duration-100">Home</a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-700 hover:text-blue-600 hover:underline transition duration-100">Crop Recommendation</a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-700 hover:text-blue-600 hover:underline transition duration-100">Crop Yield</a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-700 hover:text-blue-600 hover:underline transition duration-100">Rainfall Prediction</a>
+        </li>
+      </ul>
     </div>
+  </div>
+  
+  <!-- Sidebar -->
+  <div class="fixed inset-y-0 left-0 bg-white w-64 pt-24 shadow-lg">
+    <div class="flex items-center justify-center mb-8 space-x-4 px-6">
+      <img src="farm-technology-logo-design-template-vector-20929631.jpg" alt="Logo" class="w-12" />
+      <h1 class="text-2xl font-extrabold text-gray-800">Innovatech</h1>
+    </div>
+    <div class="text-black font-medium text-lg px-6">
+      <ul class="space-y-4">
+        <li>
+          <a href="#" class="block text-gray-700 hover:text-blue-600 transition duration-300">HP</a>
+        </li>
+        <li>
+          <a href="#" class="block text-gray-700 hover:text-blue-600 transition duration-300">Info.</a>
+        </li>
+      </ul>
+    </div>
+    <div class="bg-white rounded shadow-md p-6 w-full mt-6">
+      <h5 class="text-lg font-bold mb-4">Soil Data</h5>
+      <ul class="list-none space-y-2">
+        <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+          <span class="text-gray-600">Nitrogen</span>
+          <span class="text-gray-900">[Value]</span>
+        </li>
+        <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+          <span class="text-gray-600">Phosphorus</span>
+          <span class="text-gray-900">[Value]</span>
+        </li>
+        <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+          <span class="text-gray-600">Potassium</span>
+          <span class="text-gray-900">[Value]</span>
+        </li>
+        <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+          <span class="text-gray-600">Humidity</span>
+          <span class="text-gray-900">[Value]</span>
+        </li>
+        <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+          <span class="text-gray-600">Temperature</span>
+          <span class="text-gray-900">[Value]</span>
+        </li>
+        <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+          <span class="text-gray-600">Rainfall</span>
+          <span class="text-gray-900">[Value]</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 
     <!-- Form Container -->
-    <div class="lg:ml-72 mt-10 p-6 bg-white rounded shadow-lg">
+    <div class="ml-72 mt-24 p-6 bg-white rounded shadow-lg">
         <h2 class="text-xl font-bold mb-4">Expected Rainfall</h2>
         <form id="rainfallForm">
             <div class="mb-4">

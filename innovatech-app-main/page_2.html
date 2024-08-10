@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page_2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-green-200">
+    <!-- Form Container -->
+    <div class="ml-72 mt-10 p-6 bg-white rounded shadow-lg">
+      <h2 class="text-xl font-bold mb-4">Yield Prediction</h2>
+      <form id="cropForm">
+        <!-- NPK Values -->
+        <div class="mb-4 flex">
+          <span class="p-6 flex-1">
+            <label for="Nitrogen" class="block text-gray-700">Nitrogen:</label>
+            <input
+              type="text"
+              id="Nitrogen"
+              class="w-1/2 p-2 border rounded"
+              placeholder="Nitrogen"
+            />
+          </span>
+          <span class="p-6 flex-1">
+            <label for="Phosphorus" class="block text-gray-700"
+              >Phosphorus:</label
+            >
+            <input
+              type="text"
+              id="Phosphorus"
+              class="w-1/2 p-2 border rounded"
+              placeholder="Phosphorus"
+            />
+          </span>
+          <span class="p-6 flex-1">
+            <label for="Potassium" class="block text-gray-700"
+              >Potassium:</label
+            >
+            <input
+              type="text"
+              id="Potassium"
+              class="w-1/2 p-2 border rounded"
+              placeholder="Potassium"
+            />
+          </span>
+        </div>
+
+        <!-- Additional Fields -->
+        <div class="mb-4">
+          <label for="humidity" class="block text-gray-700">Humidity:</label>
+          <input type="text" id="humidity" class="w-1/2 p-2 border rounded" />
+        </div>
+        <div class="mb-4">
+          <label for="temperature" class="block text-gray-700"
+            >Temperature:</label
+          >
+          <input
+            type="text"
+            id="temperature"
+            class="w-1/2 p-2 border rounded"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="rainfall" class="block text-gray-700"
+            >Rainfall (mm):</label
+          >
+          <input type="text" id="rainfall" class="w-1/2 p-2 border rounded" />
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div class="mb-4">
+          <label for="crop" class="block text-gray-700">Select Crop:</label>
+          <select id="crop" name="crop" class="w-1/2 p-2 border rounded">
+            <option value="rice">Rice</option>
+            <option value="maize">Maize</option>
+            <option value="chickpea">Chickpea</option>
+            <option value="kidney_beans">Kidney Beans</option>
+            <option value="pigeon_peas">Pigeon Peas</option>
+            <option value="moth_beans">Moth Beans</option>
+            <option value="mung_bean">Mung Bean</option>
+            <option value="blackgram">Blackgram</option>
+            <option value="lentil">Lentil</option>
+            <option value="pomegranate">Pomegranate</option>
+            <option value="banana">Banana</option>
+            <option value="mango">Mango</option>
+            <option value="grapes">Grapes</option>
+            <option value="watermelon">Watermelon</option>
+            <option value="muskmelon">Muskmelon</option>
+            <option value="apple">Apple</option>
+            <option value="orange">Orange</option>
+            <option value="papaya">Papaya</option>
+            <option value="coconut">Coconut</option>
+            <option value="cotton">Cotton</option>
+            <option value="jute">Jute</option>
+            <option value="coffee">Coffee</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="bg-green-500 text-white p-2 rounded hover:bg-green-600"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

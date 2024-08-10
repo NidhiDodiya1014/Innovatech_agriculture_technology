@@ -1,94 +1,26 @@
 <!DOCTYPE html>
-<!-- Improved home page for Innovatech Agriculture -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovatech Agriculture</title>
-    <style>
-        body {
-            background-color: #e5f4e3; /* Light green background */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #2c3e50; /* Dark color for text */
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px;
-            text-align: center;
-        }
-        .logo img {
-            width: 450px;
-        }
-        .header {
-            font-size: 3rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        .subheader {
-            font-size: 1.5rem;
-            color: #555;
-            margin-bottom: 40px;
-        }
-        .navigation {
-            background-color: #4a7c59; /* Dark green for navigation */
-            padding: 15px 0;
-        }
-        .navigation a {
-            text-decoration: none;
-            color: #fff; /* White text color */
-            margin: 0 15px;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-        .navigation a:hover {
-            color: #f4d03f; /* Gold color on hover */
-        }
-        .start {
-            margin-top: 50px;
-        }
-        .start button {
-            background-color: #f4d03f; /* Gold button */
-            color: #2c3e50;
-            font-size: 1.2rem;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .start button:hover {
-            background-color: #d4ac0d; /* Darker gold on hover */
-        }
-    </style>
+    <title>My Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        
-        
-        <div class="logo">
-            <img src="logoDesign.png" alt="Innovatech Logo">
-        </div>
-        <div class="header">
-            Innovatech Agriculture
-        </div>
-        <div class="subheader">
-            Farmers' Friend, Together We Innovate Agriculture
-        </div>
-        <div class="start">
-            <button>Get Started</button>
-        </div>
-    </div>
 
-    <script>
-        const button = document.querySelector('button');
-        button.addEventListener('click', () => {
-            alert('Welcome to Innovatech');
-        });
-    </script>
+<body style="background-image: linear-gradient(to bottom, #e7e258, #3f7b30);" class=" flex flex-col items-center justify-center h-screen">
+    <div class="text-center">
+        <!-- Logo Image -->
+        <img src="logoDesign.png" style="margin-top: -15vh" alt="Logo" class="w-320 h-320 mb-0 ">
+
+        <!-- Website Name -->
+        <h1 style="margin-top: -8vh" class="text-4xl font-bold text-#2c3e50 mt-0 mb-2 mt-0">INNOVATECH</h1>
+        <h3  class="text-2xl text-#2c3e50 mt-0 mb-2 mt-0"> Farmers' Friend, Together We Innovate Agriculture</h3>
+        <!-- Get Started Button -->
+        <button class="mt-4 bg-yellow-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+            Get Started
+        </button>
+    </div>
 </body>
+
 </html>

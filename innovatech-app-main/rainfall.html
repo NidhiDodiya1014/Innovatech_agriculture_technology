@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimate Rainfall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-teal-400">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 p-6">
+        <div class="mb-8">
+            <img src="farm-technology-logo-design-template-vector-20929631.jpg" alt="Logo" class="w-20">
+        </div>
+        <div class="text-black font-medium text-lg">
+            <ul>
+                <li class="py-2">
+                    <a href="#" class="block p-2 hover:bg-teal-300 rounded">
+                        <span>HP</span>
+                    </a>
+                </li>
+                <li class="py-2">
+                    <a href="#" class="block p-2 hover:bg-teal-300 rounded">
+                        <span>Info.</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Form Container -->
+    <div class="lg:ml-72 mt-10 p-6 bg-white rounded shadow-lg">
+        <h2 class="text-xl font-bold mb-4">Expected Annual Rainfall</h2>
+        <form id="rainfallForm">
+            <div class="mb-4">
+                <label for="state" class="block text-gray-700 mb-2">State:</label>
+                <!-- make the select tag scollable-->
+                <select id="state" class="w-full p-2 border rounded overflow-y-scroll">
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <!-- more options here -->
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="district" class="block text-gray-700 mb-2">District:</label>
+                <select id="district" class="w-full p-2 border rounded">
+                    <option value="Anantapur">Anantapur</option>
+                    <option value="Chittoor">Chittoor</option>
+                    <option value="East Godavari">East Godavari</option>
+                    <!-- more options here -->
+                </select>
+            </div>
+            <!-- Add a submit button if needed -->
+            <button type="submit" class="bg-teal-500 text-white p-2 rounded">Estimate Rainfall</button>
+            <!--a bordered Div with bg color to show output and height of 200 px with the text Estimated rainfall: in the center-->
+            <div class="bg-teal-200 border border-teal-500 h-32 flex justify-center items-center mt-4">
+                <span class="text-lg font-bold">Estimated Rainfall:</span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

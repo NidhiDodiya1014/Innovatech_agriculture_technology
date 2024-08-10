@@ -4,71 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estimate Rainfall</title>
+    <title>Estimating Rainfall</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-teal-400">
-    <!-- Sidebar -->
-    <div class="fixed inset-y-0 left-0 bg-white w-64 p-6">
-        <div class="mb-8">
-            <img src="farm-technology-logo-design-template-vector-20929631.jpg" alt="Logo" class="w-20">
-        </div>
-        <div class="text-black font-medium text-lg">
-            <ul>
-                <li class="py-2">
-                    <a href="#" class="block p-2 hover:bg-teal-300 rounded">
-                        <span>HP</span>
-                    </a>
+    <!-- Menu Bar -->
+    <div class="fixed top-0 inset-x-0 flex justify-center bg-white py-4 shadow-md z-50">
+        <div class="flex justify-between items-center w-full max-w-5xl px-4">
+            <!-- <h1 class="text-3xl font-extrabold text-gray-800 ">Innovatech</h1> -->
+            <ul class="flex space-x-8">
+                <li>
+                    <a href="#" class="text-blue-600 hover:bg-teal-100 p-4 transition duration-100">Home</a>
                 </li>
-                <li class="py-2">
-                    <a href="#" class="block p-2 hover:bg-teal-300 rounded">
-                        <span>Info.</span>
-                    </a>
+                <li>
+                    <a href="#" class="text-blue-600 hover:bg-teal-100 p-4 transition duration-100">Crop
+                        Recommendation</a>
+                </li>
+                <li>
+                    <a href="#" class="text-blue-600 hover:bg-teal-100 p-4 transition duration-100">Crop Yield</a>
+                </li>
+                <li>
+                    <a href="#" class="text-blue-600 bg-teal-200 p-4">Rainfall
+                        Prediction</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 pt-24 shadow-lg">
+        <div class="flex items-center justify-center mb-8 space-x-4 px-6">
+            <img src="farm-technology-logo-design-template-vector-20929631.jpg" alt="Logo" class="w-12" />
+            <h1 class="text-2xl font-extrabold text-gray-800">Innovatech</h1>
+        </div>
+        <div class="text-black font-medium text-lg px-6">
+            <ul class="space-y-4">
+                <li>
+                    <a href="#" class="block text-gray-700 hover:text-blue-600 transition duration-300">HP</a>
+                </li>
+                <li>
+                    <a href="#" class="block text-gray-700 hover:text-blue-600 transition duration-300">Info.</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bg-white rounded shadow-md p-6 w-full mt-6">
+            <h5 class="text-lg font-bold mb-4">Soil Data</h5>
+            <ul class="list-none space-y-2">
+                <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+                    <span class="text-gray-600">Nitrogen</span>
+                    <span class="text-gray-900">[Value]</span>
+                </li>
+                <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+                    <span class="text-gray-600">Phosphorus</span>
+                    <span class="text-gray-900">[Value]</span>
+                </li>
+                <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+                    <span class="text-gray-600">Potassium</span>
+                    <span class="text-gray-900">[Value]</span>
+                </li>
+                <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+                    <span class="text-gray-600">Humidity</span>
+                    <span class="text-gray-900">[Value]</span>
+                </li>
+                <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+                    <span class="text-gray-600">Temperature</span>
+                    <span class="text-gray-900">[Value]</span>
+                </li>
+                <li class="flex justify-between hover:bg-green-100 p-2 rounded transition duration-300">
+                    <span class="text-gray-600">Rainfall</span>
+                    <span class="text-gray-900">[Value]</span>
                 </li>
             </ul>
         </div>
     </div>
 
     <!-- Form Container -->
-    <div class="lg:ml-72 mt-10 p-6 bg-white rounded shadow-lg">
-        <h2 class="text-xl font-bold mb-4">Expected Annual Rainfall</h2>
+    <div class="ml-72 mt-24 p-6 bg-white rounded shadow-lg">
+        <h2 class="text-xl font-bold mb-4">Expected Rainfall</h2>
         <form id="rainfallForm">
             <div class="mb-4">
                 <label for="state" class="block text-gray-700 mb-2">State:</label>
                 <!-- make the select tag scollable-->
                 <select id="state" class="w-full p-2 border rounded overflow-y-scroll">
-                    <option value="Andhra Pradesh">Andhra Pradesh</option>
-                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                    <option value="Assam">Assam</option>
-                    <option value="Bihar">Bihar</option>
-                    <option value="Chhattisgarh">Chhattisgarh</option>
-                    <option value="Goa">Goa</option>
-                    <option value="Gujarat">Gujarat</option>
-                    <option value="Haryana">Haryana</option>
-                    <option value="Himachal Pradesh">Himachal Pradesh</option>
-                    <option value="Jharkhand">Jharkhand</option>
-                    <option value="Karnataka">Karnataka</option>
-                    <option value="Kerala">Kerala</option>
-                    <option value="Madhya Pradesh">Madhya Pradesh</option>
-                    <option value="Maharashtra">Maharashtra</option>
-                    <option value="Manipur">Manipur</option>
-                    <option value="Meghalaya">Meghalaya</option>
-                    <option value="Mizoram">Mizoram</option>
-                    <option value="Nagaland">Nagaland</option>
-                    <!-- more options here -->
+                    <option value="ANDAMAN And NICOBAR ISLANDS">Andaman And Nicibar</option>
+                    <option value="ARUNACHAL PRADESH">Arunachal Pradesh</option>
+                    <option value="ASSAM">Assam</option>
+                    <option value="MEGHALAYA">Meghalaya</option>
+                    <option value="MANIPUR">Manipur</option>
+                    <option value="MIZORAM">Mizoram</option>
+                    <option value="NAGALAND">Nagaland</option>
+                    <option value="TRIPURA">Tripura</option>
+                    <option value="WEST BENGAL">West Bengal</option>
+                    <option value="SIKKIM">Sikkim</option>
+                    <option value="ORISSA">Orissa</option>
+                    <option value="JHARKHAND">Jharkhand</option>
+                    <option value="BIHAR">Bihar</option>
+                    <option value="UTTAR PRADESH">Uttar Pradesh</option>
+                    <option value="UTTARANCHAL">Uttaranchal</option>
+                    <option value="HARYANA">Haryana</option>
+                    <option value="CHANDIGARH">Chandigarh</option>
+                    <option value="DELHI">Delhi</option>
+                    <option value="PUNJAB">Punjab</option>
+                    <option value="HIMACHAL">Himachal</option>
+                    <option value="JAMMU AND KASHMIR">Jammu And Kashmir</option>
+                    <option value="RAJASTHAN">Rajasthan</option>
+                    <option value="MADHYA PRADESH">Madhya Pradesh</option>
+                    <option value="GUJARAT">Gujarat</option>
+                    <option value="DADAR NAGAR HAVELI">Dadar Nagar Haveli</option>
+                    <option value="DAMAN AND DUI">Daman And Diu</option>
+                    <option value="MAHARASHTRA">Maharashtra</option>
+                    <option value="GOA">Goa</option>
+                    <option value="CHATISGARH">Chatisgarh</option>
+                    <option value="ANDHRA PRADESH">Andhra Pradesh</option>
+                    <option value="TAMIL NADU">Tamil Nadu</option>
+                    <option value="PONDICHERRY">Pondicherry</option>
+                    <option value="KARNATAKA">Karnataka</option>
+                    <option value="KERALA">Kerala</option>
+                    <option value="LAKSHADWEEP">Lakshadweep</option>
+
                 </select>
             </div>
             <div class="mb-4">
                 <label for="district" class="block text-gray-700 mb-2">District:</label>
-                <select id="district" class="w-full p-2 border rounded">
-                    <option value="Anantapur">Anantapur</option>
-                    <option value="Chittoor">Chittoor</option>
-                    <option value="East Godavari">East Godavari</option>
-                    <!-- more options here -->
+                <select id="district" class="w-full p-2 border rounded"></select>
+            </div>
+            <!--Month dropdown-->
+            <div class="mb-4">
+                <label for="month" class="block text-gray-700 mb-2">Month:</label>
+                <select id="month" class="w-full p-2 border rounded">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
                 </select>
             </div>
-            <!-- Add a submit button if needed -->
             <button type="submit" class="bg-teal-500 text-white p-2 rounded">Estimate Rainfall</button>
             <!--a bordered Div with bg color to show output and height of 200 px with the text Estimated rainfall: in the center-->
             <div class="bg-teal-200 border border-teal-500 h-32 flex justify-center items-center mt-4">
@@ -78,43 +155,6 @@
     </div>
 </body>
 
-<script>
-    // If a person selects a state, the districts should change accordingly
-    const state = document.getElementById('state');
-    const district = document.getElementById('district');
+<script src="rainfall.js"></script>
 
-    state.addEventListener('change', () => {
-        // Clear the districts
-        district.innerHTML = '';
-
-        // Add the districts based on the state
-        if (state.value === 'Andhra Pradesh') {
-            const districts = ['Anantapur', 'Chittoor', 'East Godavari', 'Guntur', 'Krishna', 'Kurnool', 'Nellore', 'Prakasam', 'Srikakulam', 'Visakhapatnam', 'Vizianagaram', 'West Godavari', 'YSR Kadapa'];
-            districts.forEach(districtName => {
-                const option = document.createElement('option');
-                option.value = districtName;
-                option.textContent = districtName;
-                district.appendChild(option);
-            });
-        } else if (state.value === 'Arunachal Pradesh') {
-            const districts = ['Anjaw', 'Changlang', 'Dibang Valley', 'East Kameng', 'East Siang', 'Kamle', 'Kra Daadi', 'Kurung Kumey', 'Lepa Rada', 'Lohit', 'Longding', 'Lower Dibang Valley', 'Lower Siang', 'Lower Subansiri', 'Namsai', 'Pakke Kessang', 'Papum Pare', 'Shi Yomi', 'Siang', 'Tawang', 'Tirap', 'Upper Siang', 'Upper Subansiri', 'West Kameng', 'West Siang'];
-            districts.forEach(districtName => {
-                const option = document.createElement('option');
-                option.value = districtName;
-                option.textContent = districtName;
-                district.appendChild(option);
-            });
-        } else if (state.value === 'Assam') {
-            const districts = ['Baksa', 'Barpeta', 'Biswanath', 'Bongaigaon', 'Cachar', 'Charaideo', 'Chirang', 'Darrang', 'Dhemaji', 'Dhubri', 'Dibrugarh', 'Dima Hasao', 'Goalpara', 'Golaghat', 'Hailakandi', 'Hojai', 'Jorhat', 'Kamrup', 'Kamrup Metropolitan', 'Karbi Anglong', 'Karimganj', 'Kokrajhar', 'Lakhimpur', 'Majuli', 'Morigaon', 'Nagaon', 'Nalbari', 'Sivasagar', 'Sonitpur', 'South Salmara-Mankachar', 'Tinsukia', 'Udalguri', 'West Karbi Anglong'];
-            districts.forEach(districtName => {
-                const option = document.createElement('option');
-                option.value = districtName;
-                option.textContent = districtName;
-                district.appendChild(option);
-            });
-        }
-    });
-
-    
-</script>
 </html>

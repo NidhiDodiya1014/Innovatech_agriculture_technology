@@ -1,193 +1,282 @@
+//page1
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Crop Suggestion Form</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Suggestion Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-    <body class="bg-green-200">
- <!-- Menu Bar -->
+  <body class="bg-green-200">
+    <!-- Menu Bar -->
  <div class="fixed top-0 inset-x-0 flex justify-between items-center bg-white p-2 bg-[url('3158931.webp')] opacity-60">
-  <div class="flex justify-center items-center space-x-4">
-      <img src="logoDesign.png" class="w-12"> 
-      <h1 class="text-4xl font-bold">Innovatech</h1>
-  </div>
-  <div class="mhk flex space-x-4 wd-full justify-around" style="width: 100%">
-    <a href="homepage.html" id="first_page"  style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" class="g-12 text-black-500 text-2xl hover:underline">Home</a>
-      <a href="#" id="crop-yield-link" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" class="g-12 text-black-500 text-2xl hover:underline">Crop Yield</a>
-      <a href="#" id="r1" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" class="g-12 text-black-500 text-2xl hover:underline">Rainfall Prediction</a>
-  </div>
- 
-</div>
-
-<!-- Sidebar -->
-<div class="fixed inset-y-0 left-0 bg-white w-64 p-6 mt-16 bg-[url('3158931.webp')] opacity-60">
-  <div class="text-black font-medium text-lg">
-    <!-- Box Container -->
-    <div class="soil_data bg-white rounded shadow-md p-4 w-48 mt-4 hidden" >
-      <h5 class="text-lg font-bold mb-2 ">Soil Data</h5>
-      <ul class="list-none mb-0">
-        <li class="flex justify-between mb-2">
-          <span class="text-gray-600">Nitrogen</span>
-          <span id="nitrogen-value" class="text-gray-900">[Value]</span>
-        </li>
-        <li class="flex justify-between mb-2">
-          <span class="text-gray-600">Phosphorus</span>
-          <span id="phosphorus-value" class="text-gray-900">[Value]</span>
-        </li>
-        <li class="flex justify-between mb-2">
-          <span class="text-gray-600">Potassium</span>
-          <span id="potassium-value" class="text-gray-900">[Value]</span>
-        </li>
-        <li class="flex justify-between mb-2">
-          <span class="text-gray-600">Humidity</span>
-          <span id="humidity-value" class="text-gray-900">[Value]</span>
-        </li>
-        <li class="flex justify-between mb-2">
-          <span class="text-gray-600">Temperature</span>
-          <span id="temperature-value" class="text-gray-900">[Value]</span>
-        </li>
-        <li class="flex justify-between mb-2">
-          <span class="text-gray-600">Rainfall</span>
-          <span id="rainfall-value" class="text-gray-900">[Value]</span>
-        </li>
-      </ul>
+    <div class="flex justify-center items-center space-x-4">
+        <img src="logoDesign.png" class="w-12"> 
+        <h1 class="text-3xl font-bold">Innovatech</h1>
     </div>
+    <div class="mhk flex space-x-4 wd-full justify-around" style="width: 100%">
+      <a href="homepage.html" id="first_page"  style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" class="g-12 text-black-500 text-2xl hover:underline">Home</a>
+        <a href="#" id="crop-yield-link" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" class="g-12 text-black-500 text-2xl hover:underline">Crop Yield</a>
+        <a href="#" id="r1" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" class="g-12 text-black-500 text-2xl hover:underline">Rainfall Prediction</a>
+    </div>
+   
   </div>
-</div>
-  <!-- Form Container -->
-  <div class="ml-72 mt-24 p-6 bg-white rounded shadow-lg page1_form"
-  >
-    <h2 class="text-xl font-bold mb-4">Enter Soil and Weather Details</h2>
-    <form id="cropForm">
-      <div class="mb-4 flex">
-        <span class="p-6">
-          <label for="Nitrogen" class="block text-gray-700">Nitrogen</label>
-          <input type="text" id="nitrogen1" class="nitrogen w-full p-2 border rounded" placeholder="Nitrogen" />
-        </span>
-        <span class="p-6">
-          <label for="Phosphorus" class="block text-gray-700">Phosphorus</label>
-          <input type="text" id="phosphorus1" class="phosphorus w-full p-2 border rounded" placeholder="Phosphorus" />
-        </span>
-        <span class="p-6">
-          <label for="Potassium" class="block text-gray-700">Potassium</label>
-          <input type="text" id="potassium1" class="potassium w-full p-2 border rounded" placeholder="Potassium" />
-        </span>
-      </div>
-      <div class="mb-4">
-        <label for="humidity" class="block text-gray-700">Humidity:</label>
-        <input type="text" id="humidity1" class="humidity w-full p-2 border rounded" />
-      </div>
-      <div class="mb-4">
-        <label for="temperature" class="block text-gray-700">Temperature:</label>
-        <input type="text" id="temperature1" class="temperature w-full p-2 border rounded" />
-      </div>
-      <div class="mb-4">
-        <label for="rainfall" class="block text-gray-700">Rainfall:</label>
-        <input type="text" id="rainfall1" class="rainfall w-full p-2 border rounded" />
-      </div>
-      <div class="options flex " style="gap: 5vh;">
-        <button type="submit" class="buttonSubmit bg-green-500 text-white p-2 rounded">
-          Suggest Crop
-        </button>
-        <div class="ask">
-          Do you want to check the Yield prediction of your crop? 
-          <button class="bg-red-500 text-white p-2 rounded w-12 yes">Yes</button>
+  
+
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 p-6 mt-16 bg-[url('3158931.webp')] opacity-60">
+      <div class="text-black font-medium text-lg">
+        <!-- Box Container -->
+        <div class="soil_data bg-white rounded shadow-md p-4 w-48 mt-4 hidden">
+          <h5 class="text-lg font-bold mb-2">Soil Data</h5>
+          <ul class="list-none mb-0">
+            <li class="flex justify-between mb-2">
+              <span class="text-gray-600">Nitrogen</span>
+              <span id="nitrogen-value" class="text-gray-900">[Value]</span>
+            </li>
+            <li class="flex justify-between mb-2">
+              <span class="text-gray-600">Phosphorus</span>
+              <span id="phosphorus-value" class="text-gray-900">[Value]</span>
+            </li>
+            <li class="flex justify-between mb-2">
+              <span class="text-gray-600">Potassium</span>
+              <span id="potassium-value" class="text-gray-900">[Value]</span>
+            </li>
+            <li class="flex justify-between mb-2">
+              <span class="text-gray-600">Humidity</span>
+              <span id="humidity-value" class="text-gray-900">[Value]</span>
+            </li>
+            <li class="flex justify-between mb-2">
+              <span class="text-gray-600">Temperature</span>
+              <span id="temperature-value" class="text-gray-900">[Value]</span>
+            </li>
+            <li class="flex justify-between mb-2">
+              <span class="text-gray-600">Rainfall</span>
+              <span id="rainfall-value" class="text-gray-900">[Value]</span>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="bg-green-200 border border-teal-500 h-32 flex justify-center items-center mt-4">
-        <span class="text-lg font-bold sugC">Suggested Crop:</span>
     </div>
-    </form>
-  </div>
-  <!-- -------------------------------------------page2---------------------------------------------- -->
-  <!-- Form Container -->
-  <div
-  class="page2 ml-72 mt-24 p-6 bg-white rounded shadow-lg"
-  style="display: none"
->
-  <h2 class="text-xl font-bold mb-4">Yield Prediction</h2>
-  <form id="cropForm">
-    <!-- NPK Values -->
-    <div class="mb-4 flex">
-      <span class="p-6">
-        <label for="Nitrogen" class="block text-gray-700">Nitrogen</label>
-        <input
-          type="text"
-          id="Nitrogen"
-          class="nitrogen w-full p-2 border rounded"
-          placeholder="Nitrogen"
-        />
-      </span>
-      <span class="p-6">
-        <label for="Phosphorus" class="block text-gray-700"
-          >Phosphorus</label
+    <!-- Form Container -->
+    <div class="ml-72 mt-24 p-6 bg-white rounded shadow-lg page1_form">
+      <h2 class="text-xl font-bold mb-4">Enter Soil and Weather Details</h2>
+      <form id="cropForm">
+        <div class="mb-4 flex">
+          <span class="p-6">
+            <label for="Nitrogen" class="block text-gray-700">Nitrogen</label>
+            <input
+              type="text"
+              id="nitrogen1"
+              class="nitrogen w-full p-2 border rounded"
+              placeholder="Nitrogen"
+            />
+          </span>
+          <span class="p-6">
+            <label for="Phosphorus" class="block text-gray-700"
+              >Phosphorus</label
+            >
+            <input
+              type="text"
+              id="phosphorus1"
+              class="phosphorus w-full p-2 border rounded"
+              placeholder="Phosphorus"
+            />
+          </span>
+          <span class="p-6">
+            <label for="Potassium" class="block text-gray-700">Potassium</label>
+            <input
+              type="text"
+              id="potassium1"
+              class="potassium w-full p-2 border rounded"
+              placeholder="Potassium"
+            />
+          </span>
+        </div>
+        <div class="mb-4">
+          <label for="humidity" class="block text-gray-700">Humidity:</label>
+          <input
+            type="text"
+            id="humidity1"
+            class="humidity w-full p-2 border rounded"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="temperature" class="block text-gray-700"
+            >Temperature:</label
+          >
+          <input
+            type="text"
+            id="temperature1"
+            class="temperature w-full p-2 border rounded"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="rainfall" class="block text-gray-700">Rainfall:</label>
+          <input
+            type="text"
+            id="rainfall1"
+            class="rainfall w-full p-2 border rounded"
+          />
+        </div>
+        <div class="options flex" style="gap: 5vh">
+          <button
+            type="submit"
+            class="buttonSubmit bg-green-500 text-white p-2 rounded"
+          >
+            Suggest Crop
+          </button>
+          <div class="ask hidden animate-pulse">
+            Do you want to check the Yield prediction of your crop?
+            <button class="bg-red-500 text-white p-2 rounded w-12 yes">
+              Yes
+            </button>
+          </div>
+        </div>
+        <div
+          class="hidden green_box bg-green-200 border border-teal-500 h-32 flex justify-center items-center mt-4"
         >
-        <input
-          type="text"
-          id="Phosphorus"
-          class="phosphorus w-full p-2 border rounded"
-          placeholder="Phosphorus"
-        />
-      </span>
-      <span class="p-6">
-        <label for="Potassium" class="block text-gray-700">Potassium</label>
-        <input
-          type="text"
-          id="Potassium"
-          class="potassium w-full p-2 border rounded"
-          placeholder="Potassium"
-        />
-      </span>
+          <span class="text-lg font-bold sugC">Suggested Crop:</span>
+        </div>
+      </form>
     </div>
-
-    <!-- Additional Fields -->
-    <div class="mb-4">
-      <label for="humidity" class="block text-gray-700">Humidity:</label>
-      <input type="text" id="Humidity" class="w-full p-2 border rounded" />
-    </div>
-    <div class="mb-4">
-      <label for="temperature" class="block text-gray-700"
-        >Temperature:</label
-      >
-      <input
-        type="text"
-        id="Temperature"
-        class="w-full p-2 border rounded"
-      />
-    </div>
-    <div class="mb-4">
-      <label for="rainfall" class="block text-gray-700"
-        >Rainfall (mm):</label
-      >
-      <input type="text" id="Rainfall" class="w-full p-2 border rounded" />
-    </div>
-
-    <!-- Dropdown Menu -->
-    <div class="mb-4">
-      <label for="crop" class="block text-gray-700">Select Crop:</label>
-      <select
-        id="crop"
-        name="crop"
-        class="w-full p-2 border rounded"
-      ></select>
-    </div>
-
-    <!-- Submit Button -->
-    <button
-      type="submit"
-      class="bg-green-500 text-white p-2 rounded hover:bg-green-600"
+    <!-- -------------------------------------------page2---------------------------------------------- -->
+    <!-- Form Container -->
+    <div
+      class="page2 ml-72 mt-24 p-5 bg-white rounded shadow-lg"
+      style="display: none"
     >
-      Submit
-    </button>
-    
-  </form>
-</div>
-  <script src="script1.js"></script>
- 
-</body>
+      <h2 class="text-xl font-bold mb-6">Yield Prediction</h2>
+      <form id="cropForm">
+        <!-- NPK Values -->
+        <div class="mb-3 flex">
+          <span class="pr-6">
+            <label for="State" class="block text-gray-700">Nitrogen</label>
+            <input
+              type="text"
+              id="Nitrogen"
+              class="nitrogen w-full p-2 border rounded"
+              placeholder="Nitrogen"
+            />
+          </span>
+          <span class="pr-6">
+            <label for="District" class="block text-gray-700">Phosphorus</label>
+            <input
+              type="text"
+              id="Phosphorus"
+              class="phosphorus w-full p-2 border rounded"
+              placeholder="Phosphorus"
+            />
+          </span>
+          <span class="pr-6">
+            <label for="Season" class="block text-gray-700">Potassium</label>
+            <input
+              type="text"
+              id="Potassium"
+              class="potassium w-full p-2 border rounded"
+              placeholder="Potassium"
+            />
+          </span>
+        </div>
 
+        <!-- Additional Fields -->
+        <div class="mb-4">
+          <label for="Crop" class="block text-gray-700">Crop:</label>
+          <input type="text" id="Humidity" class="w-full p-2 border rounded" />
+        </div>
+        <div class="mb-4">
+          <label for="temperature" class="block text-gray-700"
+            >Temperature:</label
+          >
+          <input
+            type="text"
+            id="Temperature"
+            class="w-full p-2 border rounded"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="rainfall" class="block text-gray-700"
+            >Rainfall (mm):</label
+          >
+          <input type="text" id="Rainfall" class="w-full p-2 border rounded" />
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div class="mb-4">
+          <label for="crop" class="block text-gray-700">Select Crop:</label>
+          <select
+            id="crop"
+            name="crop"
+            class="w-full p-2 border rounded"
+          ></select>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="submit bg-green-500 text-white p-2 rounded hover:bg-green-600"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <!-- -------------------------------------------rainfall_html---------------------------------------------- -->
+    <!-- Form Container -->
+    <div class="ml-72 mt-24 p-6 bg-white rounded shadow-lg r1 hidden">
+      <h2 class="text-xl font-bold mb-4">Expected Annual Rainfall</h2>
+      <form id="rainfallForm">
+        <div class="mb-4">
+          <label for="state" class="block text-gray-700 mb-2">State:</label>
+          <!-- make the select tag scrollable-->
+          <select
+            id="state"
+            class="w-full p-2 border rounded overflow-y-scroll"
+          >
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <!-- more options here -->
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="district" class="block text-gray-700 mb-2"
+            >District:</label
+          >
+          <select id="district" class="w-full p-2 border rounded">
+            <option value="Anantapur">Anantapur</option>
+            <option value="Chittoor">Chittoor</option>
+            <option value="East Godavari">East Godavari</option>
+            <!-- more options here -->
+          </select>
+        </div>
+        <!-- Add a submit button if needed -->
+        <button type="submit" class="bg-teal-500 text-white p-2 rounded">
+          Estimate Rainfall
+        </button>
+        <!--a bordered Div with bg color to show output and height of 200 px with the text Estimated rainfall: in the center-->
+        <div
+          class="bg-teal-200 border border-teal-500 h-32 flex justify-center items-center mt-4"
+        >
+          <span class="text-lg font-bold">Estimated Rainfall:</span>
+        </div>
+      </form>
+    </div>
+    <script src="script1.js"></script>
+  </body>
 </html>

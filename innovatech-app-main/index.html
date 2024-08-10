@@ -1,29 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Crop Suggestion Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-green-200">
-    <div class="fixed inset-y-0 left-0 bg-white w-250 p-24">
-        <div class="size-20">
-            <img src="farm-technology-logo-design-template-vector-20929631.jpg" alt="Logo">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 p-6">
+        <div class="mb-8">
+            <img src="farm-technology-logo-design-template-vector-20929631.jpg" alt="Logo" class="w-20">
         </div>
-        <div class="text-black text-decoration-none font-medium text-lg ">
+        <div class="text-black font-medium text-lg">
             <ul>
                 <li>
-                    <a href="">
-                        <span> HP</span>
+                    <a href="#">
+                        <span>HP</span>
                     </a>
                 </li>
-                <li><a href="">
-                    <span>Info.</span>
-                </a>
-            </li>
+                <li>
+                    <a href="#">
+                        <span>Info.</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
+
+    <!-- Form Container -->
+    <div class="ml-72 mt-10 p-6 bg-white rounded shadow-lg">
+        <h2 class="text-xl font-bold mb-4">Enter Soil and Weather Details</h2>
+        <form id="cropForm">
+            <div class="mb-4">
+                <label for="npk" class="block text-gray-700">NPK Value:</label>
+                <input type="text" id="npk" class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label for="humidity" class="block text-gray-700">Humidity:</label>
+                <input type="text" id="humidity" class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label for="temperature" class="block text-gray-700">Temperature:</label>
+                <input type="text" id="temperature" class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label for="rainfall" class="block text-gray-700">Rainfall:</label>
+                <input type="text" id="rainfall" class="w-full p-2 border rounded">
+            </div>
+            <button type="submit" class="bg-green-500 text-white p-2 rounded">Suggest Crop</button>
+        </form>
+    </div>
 </body>
+
 </html>

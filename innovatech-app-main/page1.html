@@ -9,56 +9,54 @@
     </head>
 
 <body class="bg-green-200">
-  <!-- Menu Bar -->
-  <div class="fixed top-0 inset-x-0 flex justify-between bg-white p-4 z-50">
-    <h1 class="text-2xl font-bold">Innovatech</h1>
-    <ul class="flex space-x-4">
-      <li><a href="#" class="text-blue-500">Home</a></li>
-      <li><a href="#" class="text-blue-500">Crop Recommandation</a></li>
-      <li><a href="#" class="text-blue-500">Crop Yield</a></li>
-      <li><a href="#" class="text-blue-500">Rainfall Prediction</a></li>
-    </ul>
+ <!-- Menu Bar -->
+ <div class="fixed top-0 inset-x-0 flex justify-between items-center bg-white p-2">
+  <div class="flex items-center space-x-2">
+      <img src="logoDesign.png" class="w-12"> 
+      <h1 class="text-3xl font-bold">Innovatech</h1>
   </div>
+  <ul class="flex space-x-4">
+    <li><a href="#" id="first_page" class="text-blue-500 hover:underline">Home</a></li>
+    <li><a href="#" id="crop-yield-link" class="text-blue-500 hover:underline">Crop Yield</a></li>
+    <li><a href="#" id="" class="text-blue-500 hover:underline">Rainfall Prediction</a></li>
+  </ul>
+</div>
 
-  <!-- Sidebar -->
-  <div class="fixed inset-y-0 left-0 bg-white w-64 p-6 mt-16">
-    <div class="mb-8">
-      <img src="farm-technology-logo-design-template-vector-20929631.jpg" alt="Logo" class="w-20" />
-    </div>
-    <div class="text-black font-medium text-lg">
-      <!-- Box Container -->
-      <div class="soil_data bg-white rounded shadow-md p-4 w-48 mt-4" style="display: none;" >
-        <h5 class="text-lg font-bold mb-2">Soil Data</h5>
-        <ul class="list-none mb-0">
-          <li class="flex justify-between mb-2">
-            <span class="text-gray-600">Nitrogen</span>
-            <span id="nitrogen-value" class="text-gray-900">[Value]</span>
-          </li>
-          <li class="flex justify-between mb-2">
-            <span class="text-gray-600">Phosphorus</span>
-            <span id="phosphorus-value" class="text-gray-900">[Value]</span>
-          </li>
-          <li class="flex justify-between mb-2">
-            <span class="text-gray-600">Potassium</span>
-            <span id="potassium-value" class="text-gray-900">[Value]</span>
-          </li>
-          <li class="flex justify-between mb-2">
-            <span class="text-gray-600">Humidity</span>
-            <span id="humidity-value" class="text-gray-900">[Value]</span>
-          </li>
-          <li class="flex justify-between mb-2">
-            <span class="text-gray-600">Temperature</span>
-            <span id="temperature-value" class="text-gray-900">[Value]</span>
-          </li>
-          <li class="flex justify-between mb-2">
-            <span class="text-gray-600">Rainfall</span>
-            <span id="rainfall-value" class="text-gray-900">[Value]</span>
-          </li>
-        </ul>
-      </div>
+<!-- Sidebar -->
+<div class="fixed inset-y-0 left-0 bg-white w-64 p-6 mt-16">
+  <div class="text-black font-medium text-lg">
+    <!-- Box Container -->
+    <div class="soil_data bg-white rounded shadow-md p-4 w-48 mt-4 hidden" >
+      <h5 class="text-lg font-bold mb-2 ">Soil Data</h5>
+      <ul class="list-none mb-0">
+        <li class="flex justify-between mb-2">
+          <span class="text-gray-600">Nitrogen</span>
+          <span id="nitrogen-value" class="text-gray-900">[Value]</span>
+        </li>
+        <li class="flex justify-between mb-2">
+          <span class="text-gray-600">Phosphorus</span>
+          <span id="phosphorus-value" class="text-gray-900">[Value]</span>
+        </li>
+        <li class="flex justify-between mb-2">
+          <span class="text-gray-600">Potassium</span>
+          <span id="potassium-value" class="text-gray-900">[Value]</span>
+        </li>
+        <li class="flex justify-between mb-2">
+          <span class="text-gray-600">Humidity</span>
+          <span id="humidity-value" class="text-gray-900">[Value]</span>
+        </li>
+        <li class="flex justify-between mb-2">
+          <span class="text-gray-600">Temperature</span>
+          <span id="temperature-value" class="text-gray-900">[Value]</span>
+        </li>
+        <li class="flex justify-between mb-2">
+          <span class="text-gray-600">Rainfall</span>
+          <span id="rainfall-value" class="text-gray-900">[Value]</span>
+        </li>
+      </ul>
     </div>
   </div>
-
+</div>
   <!-- Form Container -->
   <div class="ml-72 mt-24 p-6 bg-white rounded shadow-lg page1_form"
   >
@@ -188,7 +186,7 @@
   </form>
 </div>
   <script src="script1.js"></script>
-  <script src="script2.js"></script>
+ 
 </body>
 
 </html>

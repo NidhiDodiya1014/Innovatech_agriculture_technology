@@ -8,8 +8,19 @@
   </head>
 
   <body class="bg-green-200">
+    <!-- Menu Bar -->
+    <div class="fixed top-0 inset-x-0 flex justify-between bg-white p-4 z-50">
+      <h1 class="text-2xl font-bold">Innovatech</h1>
+      <ul class="flex space-x-4">
+        <li><a href="#" class="text-blue-500">Home</a></li>
+        <li><a href="#" class="text-blue-500">Crop Recommandation</a></li>
+        <li><a href="#" class="text-blue-500">Crop Yield</a></li>
+        <li><a href="#" class="text-blue-500">Rainfall Prediction</a></li>
+      </ul>
+    </div>
+
     <!-- Sidebar -->
-    <div class="fixed inset-y-0 left-0 bg-white w-64 p-6">
+    <div class="fixed inset-y-0 left-0 bg-white w-64 p-6 mt-16">
       <div class="mb-8">
         <img
           src="farm-technology-logo-design-template-vector-20929631.jpg"
@@ -20,21 +31,16 @@
       <div class="text-black font-medium text-lg">
         <ul>
           <li>
-            <a href="#">
-              <span>HP</span>
-            </a>
+            <a href="#"><span>HP</span></a>
           </li>
           <li>
-            <a href="#">
-              <span>Info.</span>
-            </a>
+            <a href="#"><span>Info.</span></a>
           </li>
         </ul>
-        <!-- The box container -->
-        <div class="bg-white rounded shadow-md p-4 w-48">
-          <!-- Header -->
+
+        <!-- Box Container -->
+        <div class="bg-white rounded shadow-md p-4 w-48 mt-4">
           <h5 class="text-lg font-bold mb-2">Soil Data</h5>
-          <!-- List of data -->
           <ul class="list-none mb-0">
             <li class="flex justify-between mb-2">
               <span class="text-gray-600">Nitrogen</span>
@@ -66,10 +72,7 @@
     </div>
 
     <!-- Form Container -->
-    <div
-      class="page1_form ml-72 mt-10 p-6 bg-white rounded shadow-lg"
-      style="margin-top: 15vh"
-    >
+    <div class="ml-72 mt-24 p-6 bg-white rounded shadow-lg">
       <h2 class="text-xl font-bold mb-4">Enter Soil and Weather Details</h2>
       <form id="cropForm">
         <div class="mb-4 flex">
@@ -83,9 +86,7 @@
             />
           </span>
           <span class="p-6">
-            <label for="Phosphorus" class="block text-gray-700"
-              >Phosphorus</label
-            >
+            <label for="Phosphorus" class="block text-gray-700">Phosphorus</label>
             <input
               type="text"
               id="Phosphorus"
@@ -112,9 +113,7 @@
           />
         </div>
         <div class="mb-4">
-          <label for="temperature" class="block text-gray-700"
-            >Temperature:</label
-          >
+          <label for="temperature" class="block text-gray-700">Temperature:</label>
           <input
             type="text"
             id="temperature"
@@ -138,6 +137,4 @@
       </form>
     </div>
   </body>
-
-  <script src="script1.js"></script>
 </html>

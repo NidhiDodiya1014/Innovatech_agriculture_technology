@@ -26,6 +26,10 @@ document.querySelector(".yes").addEventListener("click", (event) => {
     document.querySelector(".soil_data").style.display = "block";
     document.querySelector(".page2").style.display = "block";
     document.querySelector(".page1_form").style.display = "none";
+    document.body.style.backgroundColor="rgb(253 224 71)";
+ 
+  
+
 
     console.log(
       nitrogen_data,
@@ -56,3 +60,56 @@ document.querySelector(".yes").addEventListener("click", (event) => {
   }, 500);
 });
 // });
+
+document.getElementById("crop-yield-link").addEventListener("click", function() {
+  document.querySelector(".page2").style.display = "block";
+  document.querySelector(".page1_form").style.display = "none";
+  document.querySelector(".r1").style.display = "none";
+  
+});
+
+document.getElementById("first_page").addEventListener("click", function() {
+  document.querySelector(".page1_form").style.display = "block";
+  document.querySelector(".page2").style.display = "none"; 
+  document.querySelector(".r1").style.display = "none";
+});
+
+
+  
+ // If a person selects a state, the districts should change accordingly
+ const state = document.getElementById('state');
+ const district = document.getElementById('district');
+
+ state.addEventListener('change', () => {
+     // Clear the districts
+     district.innerHTML = '';
+
+     // Add the districts based on the state
+     if (state.value === 'Andhra Pradesh') {
+         const districts = ['Anantapur', 'Chittoor', 'East Godavari', 'Guntur', 'Krishna', 'Kurnool', 'Nellore', 'Prakasam', 'Srikakulam', 'Visakhapatnam', 'Vizianagaram', 'West Godavari', 'YSR Kadapa'];
+         districts.forEach(districtName => {
+             const option = document.createElement('option');
+             option.value = districtName;
+             option.textContent = districtName;
+             district.appendChild(option);
+         });
+     } else if (state.value === 'Arunachal Pradesh') {
+         const districts = ['Anjaw', 'Changlang', 'Dibang Valley', 'East Kameng', 'East Siang', 'Kamle', 'Kra Daadi', 'Kurung Kumey', 'Lepa Rada', 'Lohit', 'Longding', 'Lower Dibang Valley', 'Lower Siang', 'Lower Subansiri', 'Namsai', 'Pakke Kessang', 'Papum Pare', 'Shi Yomi', 'Siang', 'Tawang', 'Tirap', 'Upper Siang', 'Upper Subansiri', 'West Kameng', 'West Siang'];
+         districts.forEach(districtName => {
+             const option = document.createElement('option');
+             option.value = districtName;
+             option.textContent = districtName;
+             district.appendChild(option);
+         });
+     } else if (state.value === 'Assam') {
+         const districts = ['Baksa', 'Barpeta', 'Biswanath', 'Bongaigaon', 'Cachar', 'Charaideo', 'Chirang', 'Darrang', 'Dhemaji', 'Dhubri', 'Dibrugarh', 'Dima Hasao', 'Goalpara', 'Golaghat', 'Hailakandi', 'Hojai', 'Jorhat', 'Kamrup', 'Kamrup Metropolitan', 'Karbi Anglong', 'Karimganj', 'Kokrajhar', 'Lakhimpur', 'Majuli', 'Morigaon', 'Nagaon', 'Nalbari', 'Sivasagar', 'Sonitpur', 'South Salmara-Mankachar', 'Tinsukia', 'Udalguri', 'West Karbi Anglong'];
+         districts.forEach(districtName => {
+             const option = document.createElement('option');
+             option.value = districtName;
+             option.textContent = districtName;
+             district.appendChild(option);
+         });
+     }
+ });
+
+ 

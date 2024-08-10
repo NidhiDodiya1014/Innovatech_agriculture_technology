@@ -14,43 +14,24 @@
       <form id="cropForm">
         <!-- NPK Values -->
         <div class="mb-4 flex">
-          <span class="p-6 flex-1">
-            <label for="Nitrogen" class="block text-gray-700">Nitrogen:</label>
-            <input
-              type="text"
-              id="Nitrogen"
-              class="w-1/2 p-2 border rounded"
-              placeholder="Nitrogen"
-            />
-          </span>
-          <span class="p-6 flex-1">
-            <label for="Phosphorus" class="block text-gray-700"
-              >Phosphorus:</label
-            >
-            <input
-              type="text"
-              id="Phosphorus"
-              class="w-1/2 p-2 border rounded"
-              placeholder="Phosphorus"
-            />
-          </span>
-          <span class="p-6 flex-1">
-            <label for="Potassium" class="block text-gray-700"
-              >Potassium:</label
-            >
-            <input
-              type="text"
-              id="Potassium"
-              class="w-1/2 p-2 border rounded"
-              placeholder="Potassium"
-            />
-          </span>
-        </div>
+            <span class="p-6">
+              <label for="Nitrogen" class="block text-gray-700">Nitrogen</label>
+              <input type="text" id="Nitrogen" class="nitrogen w-full p-2 border rounded" placeholder="Nitrogen" />
+            </span>
+            <span class="p-6">
+              <label for="Phosphorus" class="block text-gray-700">Phosphorus</label>
+              <input type="text" id="Phosphorus" class="phosphorus w-full p-2 border rounded" placeholder="Phosphorus" />
+            </span>
+            <span class="p-6">
+              <label for="Potassium" class="block text-gray-700">Potassium</label>
+              <input type="text" id="Potassium" class="potassium w-full p-2 border rounded" placeholder="Potassium" />
+            </span>
+          </div>
 
         <!-- Additional Fields -->
         <div class="mb-4">
           <label for="humidity" class="block text-gray-700">Humidity:</label>
-          <input type="text" id="humidity" class="w-1/2 p-2 border rounded" />
+          <input type="text" id="humidity" class="w-full p-2 border rounded" />
         </div>
         <div class="mb-4">
           <label for="temperature" class="block text-gray-700"
@@ -59,20 +40,20 @@
           <input
             type="text"
             id="temperature"
-            class="w-1/2 p-2 border rounded"
+            class="w-full p-2 border rounded"
           />
         </div>
         <div class="mb-4">
           <label for="rainfall" class="block text-gray-700"
             >Rainfall (mm):</label
           >
-          <input type="text" id="rainfall" class="w-1/2 p-2 border rounded" />
+          <input type="text" id="rainfall" class="w-full p-2 border rounded" />
         </div>
 
         <!-- Dropdown Menu -->
         <div class="mb-4">
           <label for="crop" class="block text-gray-700">Select Crop:</label>
-          <select id="crop" name="crop" class="w-1/2 p-2 border rounded">
+          <select id="crop" name="crop" class="w-full p-2 border rounded">
             <option value="rice">Rice</option>
             <option value="maize">Maize</option>
             <option value="chickpea">Chickpea</option>

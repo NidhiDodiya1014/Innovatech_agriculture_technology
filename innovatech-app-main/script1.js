@@ -69,7 +69,7 @@
       document.querySelector(".page2").style.display = "none";
       document.querySelector(".r1").style.display = "none";
     });
-    document.getElementById("rainfall_link").addEventListener("click", function () {
+    document.getElementById("r1").addEventListener("click", function () {
       document.querySelector(".page2").style.display = "none";
       document.querySelector(".page1_form").style.display = "none";
       document.querySelector(".r1").style.display = "block";

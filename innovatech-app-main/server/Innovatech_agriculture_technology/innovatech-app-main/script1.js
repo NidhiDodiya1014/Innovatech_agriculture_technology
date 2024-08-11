@@ -102,25 +102,24 @@ let flag = false;
         document.getElementById("Rainfall").value = rainfall_data;
     });
 
-
-
-    
-    document.getElementById("crop-yield-link").addEventListener("click", function() {
+document.getElementById("crop-yield-link").addEventListener("click", function() {
       document.querySelector(".page2").style.display = "block";
       document.querySelector(".page1_form").style.display = "none";
       document.querySelector(".r1").style.display = "none";
-      
+      document.querySelector(".production_page").style.display = "none";
     });
     
     document.getElementById("first_page").addEventListener("click", function() {
       document.querySelector(".page1_form").style.display = "block";
       document.querySelector(".page2").style.display = "none"; 
       document.querySelector(".r1").style.display = "none";
+      document.querySelector(".production_page").style.display = "none";
     });
     document.getElementById("rainfall_link").addEventListener("click", function() {
       document.querySelector(".page2").style.display = "none";
       document.querySelector(".page1_form").style.display = "none";
       document.querySelector(".r1").style.display = "block";
+      document.querySelector(".production_page").style.display = "none";
       
     });
     document.getElementById("product-prediction").addEventListener("click", function() {

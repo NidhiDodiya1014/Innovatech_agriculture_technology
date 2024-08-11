@@ -1,0 +1,30 @@
+from flask import Flask, request, jsonify
+import pandas as pd
+
+app = Flask(__name__)
+
+# Load the Excel file into a DataFrame
+df = pd.read_excel('path_to_your_file.xlsx')
+
+@app.route('/get_rainfall_data', methods=['GET'])
+def get_rainfall_data():
+    state_name = request.args.get('state_name')
+    district = request.args.get('district')
+    duration = request.args.get('duration')
+
+    # Filter DataFrame based on state_name and district
+    filtered_df = df[(df['STATE_UT_NAME'] == state_name) & (df['DISTRICT'] == district)]
+
+    if filtered_df.empty:
+        return jsonify({'error': 'No data found for the given state and district'}), 404
+
+    # Get the specific column based on the duration
+    if duration in filtered_df.columns:
+        rainfall_data = filtered_df[duration].values[0]
+    else:
+        return jsonify({'error': 'Invalid duration'}), 400
+
+    return jsonify({'rainfall': rainfall_data})
+
+if __name__ == '__main__':
+    app.run(debug=True)
